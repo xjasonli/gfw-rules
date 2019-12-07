@@ -8,22 +8,37 @@ V2ray geosite file as a drop-in replacement of the official version.
 URL: https://raw.githubusercontent.com/xjasonli/gfw-rules/master/geosite.dat
 
 ```json
-      {
-        "type": "field",
-        "domain": ["geosite:geolocation-!cn"],
-        "outboundTag": "o.proxy"
-      },
-      {
-        "type": "field",
-        "domain": ["geosite:category-ads"],
-        "outboundTag": "o.block"
-      },
-      {
-        "type": "field",
-        "domain": ["geosite:cn"],
-        "outboundTag": "o.direct"
-      }
-      // default o.proxy
+"routing": {
+  "domainStrategy": "AsIs",
+  "rules":[
+    {
+      "type": "field",
+      "ip": ["geoip:private"],
+      "outboundTag": "o.direct"
+    },
+    {
+      "type": "field",
+      "domain": ["geosite:category-ads"],
+      "outboundTag": "o.block"
+    },
+    {
+      "type": "field",
+      "domain": ["geosite:geolocation-!cn"],
+      "outboundTag": "o.proxy"
+    },
+    {
+      "type": "field",
+      "domain": ["geosite:cn"],
+      "outboundTag": "o.direct"
+    },
+    {
+      "type": "field",
+      "ip": ["geoip:cn"],
+      "outboundTag": "o.direct"
+    }
+    // Leave o.proxy as default path
+  ]
+}
 ```
 
 ## shadowrocket.conf
