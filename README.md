@@ -2,7 +2,9 @@
 GFW rules in multiple formats
 
 ## geosite.dat
+
 V2ray geosite file as a drop-in replacement of the official version.
+
 URL: https://raw.githubusercontent.com/xjasonli/gfw-rules/master/geosite.dat
 
 ```json
@@ -25,5 +27,7 @@ URL: https://raw.githubusercontent.com/xjasonli/gfw-rules/master/geosite.dat
 ```
 
 ## shadowrocket.conf
+
 Shadowrocket(iOS App) rule.
+
 URL: https://raw.githubusercontent.com/xjasonli/gfw-rules/master/shadowrocket.conf
